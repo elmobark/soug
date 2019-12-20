@@ -7,18 +7,41 @@
 //
 
 import UIKit
+import Alamofire
+import ImageSlideshow
+class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+    @IBOutlet weak var typepicker: UIPickerView!
 
-class ViewController: UIViewController {
-
+    
+    let typies = ["جديد","مستعمل"]
+    let cities = ["الكل","الرياض","مكة المكرمة"]
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return component == 1 ? typies.count : cities.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return component == 1 ? typies[row] : cities[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(component)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
 
 
 }
