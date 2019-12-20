@@ -9,19 +9,22 @@
 import UIKit
 
 class tabsController: UIViewController,UITabBarDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource  {
+    @IBOutlet weak var table: UITableView!
     
     var pick :Selection = Selection(city: "", type: "", cat: "")
+    var pro:Products = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return pro.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! proCell
+        cell.inition(pro: pro[indexPath.row])
+        return cell
     }
     
     let typies = ["جديد","مستعمل"]
-    let cities = ["الكل","الرياض","مكة المكرمة"]
+    let cities = ["الكل","الرياض","مكة"]
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -64,12 +67,11 @@ class tabsController: UIViewController,UITabBarDelegate,UIPickerViewDelegate,UIP
     func getProduct(data:Selection) {
         Product.getOnline(param: data, completion: {
             products in
-            products.forEach({ (pro) in
-                print(pro.name)
-            })
+          self.pro = products
+            self.table.reloadData()
             
         })
-        print("\(data.cat) / \(data.city) / \(data.type)")
+        
     }
 
 }

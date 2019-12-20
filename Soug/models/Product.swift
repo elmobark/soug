@@ -27,12 +27,18 @@ struct Product: Codable {
     let contactPhone, checked, ask, createdAt: String
     let updatedAt, image: String
     static func getOnline(param:Selection,completion : @escaping (Products)->()){
-        let url = utils().API_URL + "show/products.php?x=y&city=\(param.city)&status=\(param.type)&category=\(param.cat)"
-        Alamofire.request(url).responseProducts { response in
+        let url = utils().API_URL + "show/products.php"
+        var postParameters:[String: Any] = ["x":"y", "city": param.city, "status": param.type]
+        postParameters["category"] = param.cat
+        Alamofire.request(url,method: .get,parameters: postParameters).responseProducts { response in
                  if let product = response.result.value {
                    completion(product)
-                }
+                 }
                }
+//        Alamofire.request(url,method: .get,parameters: postParameters).responseJSON { respone in
+//            print(respone.result.value.debugDescription)
+//            print(respone.error.debugDescription)
+//        }
     }
     enum CodingKeys: String, CodingKey {
         case the0 = "0"

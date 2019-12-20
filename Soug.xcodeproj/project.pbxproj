@@ -10,6 +10,7 @@
 		29A3E9524625600F18ED5BBA /* Pods_Soug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBFE85125BA47196BD4B990 /* Pods_Soug.framework */; };
 		CC4C12BB23AB090E002B65EC /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C12BA23AB090E002B65EC /* utils.swift */; };
 		CC4C12BE23AB0B05002B65EC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C12BD23AB0B05002B65EC /* Product.swift */; };
+		CC5553D723AD86B400CAE6AB /* proCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5553D623AD86B400CAE6AB /* proCell.swift */; };
 		CC68E17023AD5EC70005A638 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68E16F23AD5EC70005A638 /* Selection.swift */; };
 		CC7FD2C623ABE71500597252 /* tabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FD2C523ABE71500597252 /* tabsController.swift */; };
 		CCCC64D523A93B4A0000D1DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC64D423A93B4A0000D1DC /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		4F9FD62E2958C132C8D05400 /* Pods-Soug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soug.release.xcconfig"; path = "Target Support Files/Pods-Soug/Pods-Soug.release.xcconfig"; sourceTree = "<group>"; };
 		CC4C12BA23AB090E002B65EC /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		CC4C12BD23AB0B05002B65EC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CC5553D623AD86B400CAE6AB /* proCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proCell.swift; sourceTree = "<group>"; };
 		CC68E16F23AD5EC70005A638 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		CC7FD2C523ABE71500597252 /* tabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabsController.swift; sourceTree = "<group>"; };
 		CCCC64D123A93B490000D1DC /* Soug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soug.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		CC5553D523AD866100CAE6AB /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC5553D623AD86B400CAE6AB /* proCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		CCCC64C823A93B490000D1DC = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		CCCC64D323A93B490000D1DC /* Soug */ = {
 			isa = PBXGroup;
 			children = (
+				CC5553D523AD866100CAE6AB /* cells */,
 				CC4C12BC23AB0AF3002B65EC /* models */,
 				CC4C12B923AB08EE002B65EC /* helpers */,
 				CC4C12B823AB08E8002B65EC /* tabs */,
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC68E17023AD5EC70005A638 /* Selection.swift in Sources */,
+				CC5553D723AD86B400CAE6AB /* proCell.swift in Sources */,
 				CCCC64D723A93B4A0000D1DC /* ViewController.swift in Sources */,
 				CCCC64D523A93B4A0000D1DC /* AppDelegate.swift in Sources */,
 				CC4C12BE23AB0B05002B65EC /* Product.swift in Sources */,
